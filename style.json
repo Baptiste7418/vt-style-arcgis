@@ -342,31 +342,6 @@
 			}
 		},
 		{
-			"id": "Hillshade",
-			"type": "raster",
-			"source": "relief",
-			"maxzoom": 12,
-			"paint": {
-				"raster-opacity": {
-					"stops": [
-						[
-							0,
-							0.2
-						],
-						[
-							10,
-							0.15
-						],
-						[
-							12,
-							0
-						]
-					]
-				},
-				"raster-brightness-min": 0.5
-			}
-		},
-		{
 			"id": "Waterway_River",
 			"type": "line",
 			"source": "asit",
