@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Style ASIT VectorTile - ArcGIS MN95",
+  "name": "ASIT Vector Tiles - EPSG:2056",
   "tileInfo": {
     "rows": 512,
     "cols": 512,
@@ -32,10 +32,10 @@
     ]
   },
   "sources": {
-    "asit_vt": {
+    "asit": {
       "type": "vector",
       "tiles": [
-        "https://vt.asit-asso.ch/tiles/{z}/{x}/{y}.pbf"
+        "https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt"
       ],
       "minzoom": 0,
       "maxzoom": 14
@@ -46,65 +46,45 @@
       "id": "background",
       "type": "background",
       "paint": {
-        "background-color": "#f8f9fa"
+        "background-color": "#f4f3f0"
       }
     },
     {
-      "id": "landuse_polygons",
+      "id": "landuse",
       "type": "fill",
-      "source": "asit_vt",
+      "source": "asit",
       "source-layer": "landuse",
       "paint": {
-        "fill-color": "#e9ecef",
-        "fill-opacity": 0.5
+        "fill-color": "#e0ebd3"
       }
     },
     {
-      "id": "water_polygons",
+      "id": "water",
       "type": "fill",
-      "source": "asit_vt",
+      "source": "asit",
       "source-layer": "water",
       "paint": {
-        "fill-color": "#a5d8ff"
+        "fill-color": "#a1cbe6"
       }
     },
     {
-      "id": "building_polygons",
+      "id": "building",
       "type": "fill",
-      "source": "asit_vt",
+      "source": "asit",
       "source-layer": "building",
       "paint": {
-        "fill-color": "#ced4da",
-        "fill-outline-color": "#adb5bd"
+        "fill-color": "#d9d0c7",
+        "fill-outline-color": "#b5a392"
       }
     },
     {
-      "id": "roads_lines",
+      "id": "road",
       "type": "line",
-      "source": "asit_vt",
+      "source": "asit",
       "source-layer": "transportation",
-      "layout": {
-        "line-join": "round",
-        "line-cap": "round"
-      },
       "paint": {
         "line-color": "#ffffff",
         "line-width": 2
-      }
-    },
-    {
-      "id": "place_labels",
-      "type": "symbol",
-      "source": "asit_vt",
-      "source-layer": "place",
-      "layout": {
-        "text-field": "{name}",
-        "text-size": 12
-      },
-      "paint": {
-        "text-color": "#212529",
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
       }
     }
   ]
