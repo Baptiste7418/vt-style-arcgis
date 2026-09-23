@@ -1,72 +1,34 @@
 {
   "version": 8,
-  "name": "ASIT Vector Tiles - EPSG:2056",
-  "tileInfo": {
-    "rows": 512,
-    "cols": 512,
-    "dpi": 96,
-    "format": "pbf",
-    "spatialReference": {
-      "wkid": 2056,
-      "latestWkid": 2056
-    },
-    "origin": {
-      "x": 2420000,
-      "y": 1350000
-    },
-    "lods": [
-      { "level": 0, "resolution": 4000, "scale": 15118110.23622047 },
-      { "level": 1, "resolution": 2000, "scale": 7559055.118110235 },
-      { "level": 2, "resolution": 1000, "scale": 3779527.5590551177 },
-      { "level": 3, "resolution": 500, "scale": 1889763.7795275588 },
-      { "level": 4, "resolution": 250, "scale": 944881.8897637794 },
-      { "level": 5, "resolution": 100, "scale": 377952.7559055118 },
-      { "level": 6, "resolution": 50, "scale": 188976.3779527559 },
-      { "level": 7, "resolution": 20, "scale": 75590.55118110236 },
-      { "level": 8, "resolution": 10, "scale": 37795.27559055118 },
-      { "level": 9, "resolution": 5, "scale": 18897.63779527559 },
-      { "level": 10, "resolution": 2.5, "scale": 9448.818897637795 },
-      { "level": 11, "resolution": 1, "scale": 3779.527559055118 },
-      { "level": 12, "resolution": 0.5, "scale": 1889.763779527559 },
-      { "level": 13, "resolution": 0.25, "scale": 944.8818897637795 },
-      { "level": 14, "resolution": 0.1, "scale": 377.9527559055118 }
-    ]
-  },
+  "name": "ASIT Vector Tiles - EPSG:2056 TEST",
+  "glyphs": "https://vt.asit-asso.ch/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "asit": {
       "type": "vector",
-      "tiles": [
-        "https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{y}/{x}.mvt"
-      ],
+      "tiles": ["https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt"],
       "minzoom": 0,
-      "maxzoom": 14
+      "maxzoom": 10
     }
   },
   "layers": [
     {
       "id": "background",
       "type": "background",
-      "paint": {
-        "background-color": "#f4f3f0"
-      }
+      "paint": { "background-color": "#f4f3f0" }
     },
     {
-      "id": "landuse",
+      "id": "landcover",
       "type": "fill",
       "source": "asit",
-      "source-layer": "landuse",
-      "paint": {
-        "fill-color": "#e0ebd3"
-      }
+      "source-layer": "landcover",
+      "paint": { "fill-color": "#e0ebd3" }
     },
     {
       "id": "water",
       "type": "fill",
       "source": "asit",
       "source-layer": "water",
-      "paint": {
-        "fill-color": "#a1cbe6"
-      }
+      "paint": { "fill-color": "#a1cbe6" }
     },
     {
       "id": "building",
@@ -79,13 +41,23 @@
       }
     },
     {
-      "id": "road",
+      "id": "street",
       "type": "line",
       "source": "asit",
-      "source-layer": "transportation",
+      "source-layer": "street",
       "paint": {
         "line-color": "#ffffff",
         "line-width": 2
+      }
+    },
+    {
+      "id": "boundary",
+      "type": "line",
+      "source": "asit",
+      "source-layer": "boundary",
+      "paint": {
+        "line-color": "#999999",
+        "line-width": 1
       }
     }
   ]
