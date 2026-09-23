@@ -7,7 +7,8 @@
     "dpi": 96,
     "format": "pbf",
     "spatialReference": {
-      "wkid": 2056
+      "wkid": 2056,
+      "latestWkid": 2056
     },
     "origin": {
       "x": 2420000,
@@ -35,7 +36,7 @@
     "asit": {
       "type": "vector",
       "tiles": [
-        "https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{x}/{y}.mvt"
+        "https://vt.asit-asso.ch/tiles/asit/v0.1/2056/{z}/{y}/{x}.mvt"
       ],
       "minzoom": 0,
       "maxzoom": 14
